@@ -2,3 +2,4 @@ node_modules
 hackerrank_js.sublime-project
 hackerrank_js.sublime-workspace
 .DS_Store
+*.log
