@@ -2,7 +2,7 @@
 var fs = require("fs");
 var readline = require("readline");
 
-const INPUT_PATH = "/Users/adiaz/programacion/javascript/hackerank_js/input/";
+const INPUT_PATH = "./input/";
 
 var readArray = function(fileInputPath) {
     return new Promise((resolve, reject) => {
