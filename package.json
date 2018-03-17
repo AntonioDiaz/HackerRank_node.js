@@ -5,7 +5,7 @@
   "main": "hello.js",
   "scripts": {
     "test_all": "./node_modules/.bin/mocha test/*test.js test/**/*test.js --reporter spec",
-    "test_challenge": "./node_modules/.bin/mocha test/sorting/counting_sort_01_test.js "
+    "test_challenge": "./node_modules/.bin/mocha test/sorting/counting_sort_02_test.js "
   },
   "author": "Antonio Díaz Arroyo",
   "license": "ISC",
