@@ -13,7 +13,6 @@ var organizingContainers = function (inputArray) {
             rowSumRepeated++;
         }
         mapSumsRows.set(rowSum, rowSumRepeated);
-
         var columnsSumRepeated = 1;
         if (mapSumsColumns.get(columnSum)!=null) {
             columnsSumRepeated++;
@@ -27,5 +26,4 @@ var organizingContainers = function (inputArray) {
     }
     return "Possible";
 };
-
 exports.organizingContainers = organizingContainers;

@@ -2,7 +2,7 @@
 var fs = require("fs");
 var readline = require("readline");
 
-const INPUT_PATH = "./input/";
+const INPUT_PATH = "./input_output/";
 
 var readArray = function(fileInputPath) {
     return new Promise((resolve, reject) => {
@@ -61,9 +61,7 @@ var readFirstLineString = function (fileInputPath) {
     });
 };
 
-
 exports.readFileIntoArray = readArray;
 exports.readFileIntoArrayTwoDimension = readArrayTwoDimension;
 exports.readFileline = readFirstLineString;
 exports.INPUT_PATH = INPUT_PATH;
-

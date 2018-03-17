@@ -24,7 +24,17 @@ describe("readFileIntoArrayTwoDimension: ", function() {
             });
         });
     });
+    it("input 02: ", function() {
+        const input = "full_counting_sort_input.txt";
+        let promise = utils.readFileIntoArrayTwoDimension(input);
+        const arrayExpected = "0,ab,6,cd,0,ef,6,gh,4,ij,0,ab,6,cd,0,ef,6,gh,0,ij,4,that,3,be,0,to,1,be,5,question,1,or,2,not,4,is,2,to,4,the";
+        return promise.then(data => {
+            assert.equal(20, data.length);
+            assert.equal(arrayExpected, data.join(","));
+        });
+    });
 });
+
 
 describe("readFileline", function() {
     it ("input 01", function(){
@@ -34,6 +44,3 @@ describe("readFileline", function() {
         });
     });
 });
-
-
-
