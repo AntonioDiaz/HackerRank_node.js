@@ -5,7 +5,7 @@
   "main": "hello.js",
   "scripts": {
     "test_all": "./node_modules/.bin/mocha test/*test.js test/**/*test.js --reporter spec",
-    "test_challenge": "./node_modules/.bin/mocha --timeout 15000 test/search/knightL_test.js"
+    "test_challenge": "./node_modules/.bin/mocha test/greedy/priyanka_test.js"
   },
   "author": "Antonio Díaz Arroyo",
   "license": "ISC",
