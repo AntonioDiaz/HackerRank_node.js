@@ -1,5 +1,5 @@
 var assert = require("chai").assert;
-var hackerankChallenge = require("../../src/sorting/tutorial_intro.js");
+var hackerankChallenge = require("../../../src/algorithms/sorting/tutorial_intro.js");
 
 describe("sorting > introTutorial: ", function() {
     var elementToFind = 4;

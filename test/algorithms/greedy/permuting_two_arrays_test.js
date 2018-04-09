@@ -1,5 +1,5 @@
 var assert = require("chai").assert;
-var hackerankChallenge = require("../../src/greedy/permuting_two_arrays.js");
+var hackerankChallenge = require("../../../src/algorithms/greedy/permuting_two_arrays.js");
 
 describe("permuting_two_arrays: ", function() {
     it("input 01: ", function() {

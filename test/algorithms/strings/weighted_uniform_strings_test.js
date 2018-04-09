@@ -1,6 +1,6 @@
 var assert = require("chai").assert;
-var hackerankChallenge = require("../../src/strings/weighted_uniform_strings.js");
-var utils = require("../../src/utils.js");
+var hackerankChallenge = require("../../../src/algorithms/strings/weighted_uniform_strings.js");
+var utils = require("../../../src/utils.js");
 
 describe("weighted_uniform_string: ", function() {
     it("input 01: ", function() {

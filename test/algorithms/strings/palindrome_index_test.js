@@ -1,5 +1,5 @@
 var assert = require("chai").assert;
-var hackerankChallenge = require("../../src/strings/palindrome_index.js");
+var hackerankChallenge = require("../../../src/algorithms/strings/palindrome_index.js");
 
 describe("is_palindrome: ", function() {
     it("input 01: ", function() {

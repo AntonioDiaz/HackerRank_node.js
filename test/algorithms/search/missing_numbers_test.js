@@ -1,6 +1,6 @@
 var assert = require("chai").assert;
-var hackerankChallenge = require("../../src/search/missing_numbers.js");
-var utils = require("../../src/utils.js");
+var hackerankChallenge = require("../../../src/algorithms/search/missing_numbers.js");
+var utils = require("../../../src/utils.js");
 var fs = require("fs");
 var readline = require("readline");
 

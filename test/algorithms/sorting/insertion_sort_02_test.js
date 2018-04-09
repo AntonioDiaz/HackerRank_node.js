@@ -1,5 +1,5 @@
 var assert = require("chai").assert;
-var hackerankChallenge = require("../../src/sorting/insertion_sort_02.js");
+var hackerankChallenge = require("../../../src/algorithms/sorting/insertion_sort_02.js");
 
 describe("sorting > insertion sort 02: ", function() {
     var inputArray = "1 4 3 5 6 2".split(" ").map(x => Number(x));

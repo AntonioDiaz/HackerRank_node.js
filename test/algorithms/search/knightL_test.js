@@ -1,5 +1,5 @@
 var assert = require("chai").assert;
-var hackerankChallenge = require("../../src/search/knightL.js");
+var hackerankChallenge = require("../../../src/algorithms/search/knightL.js");
 
 // describe("knightL helper function: ", function() {
 //     it("input 01: ", function() {

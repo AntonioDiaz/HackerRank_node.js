@@ -1,6 +1,6 @@
 var assert = require("chai").assert;
-var hackerankChallenge = require("../../src/warmup/diagonal_difference.js");
-var utils = require("../../src/utils.js");
+var hackerankChallenge = require("../../../src/algorithms/warmup/diagonal_difference.js");
+var utils = require("../../../src/utils.js");
 
 describe("diagonal_difference: ", function() {
     it("input 01: ", function() {

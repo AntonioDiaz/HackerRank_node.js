@@ -1,6 +1,6 @@
 var assert = require("chai").assert;
-var hackerankChallenge = require("../../src/sorting/full_counting_sort.js");
-var utils = require("../../src/utils.js");
+var hackerankChallenge = require("../../../src/algorithms/sorting/full_counting_sort.js");
+var utils = require("../../../src/utils.js");
 
 describe("sorting > full counting sort: ", function() {
     it("input 01: ", function() {

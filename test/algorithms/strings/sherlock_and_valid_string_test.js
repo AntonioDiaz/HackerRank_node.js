@@ -1,5 +1,5 @@
 var assert = require("chai").assert;
-var hackerankChallenge = require("../../src/strings/sherlock_and_valid_string.js");
+var hackerankChallenge = require("../../../src/algorithms/strings/sherlock_and_valid_string.js");
 
 
 describe("getArrayRepetitions: ", function() {
@@ -41,11 +41,11 @@ describe("isSherlockValidString: ", function() {
     var input05 = "abcccc";
     it("input 05: " + input05, function() {
         assert.equal("NO", hackerankChallenge.isSherlockValidString(input05));
-    }); 
+    });
     var input06 = "abbcd";
     it("input 06: " + input06 , function() {
         assert.equal("YES", hackerankChallenge.isSherlockValidString(input06));
-    }); 
+    });
     var input07 = "aabcc";
     it("input 07: " + input07, function() {
         assert.equal("YES", hackerankChallenge.isSherlockValidString(input07));
@@ -53,15 +53,15 @@ describe("isSherlockValidString: ", function() {
     var input08 = "aabcc";
     it("input 08: " + input08, function() {
         assert.equal("YES", hackerankChallenge.isSherlockValidString(input08));
-    }); 
+    });
     var input09 = "jtqgugmcsxvdwidtcyqpogkdifapuloqykjfxruvfrshcehekoiwbpbrprahwvhliglyxynjotbaswnnnmxbkmcftvsdqajemeul";
     it("input 09: " + input09, function() {
         assert.equal("YES", hackerankChallenge.isSherlockValidString(input09));
-    }); 
+    });
     var input10 = "hfchdkkbfifgbgebfaahijchgeeeiagkadjfcbekbdaifchkjfejckbiiihegacfbchdihkgbkbddgaefhkdgccjejjaajgijdkd";
     it("input 10: " + input10, function() {
         assert.equal("YES", hackerankChallenge.isSherlockValidString(input10));
-    }); 
+    });
     var input11 = "accc";
     it("input 11: " + input11, function() {
         assert.equal("YES", hackerankChallenge.isSherlockValidString(input11));

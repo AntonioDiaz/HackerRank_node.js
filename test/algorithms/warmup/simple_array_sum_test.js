@@ -1,6 +1,6 @@
 var assert = require("chai").assert;
-var hackerankChallenge = require("../../src/warmup/simple_array_sum.js");
-var utils = require("../../src/utils.js");
+var hackerankChallenge = require("../../../src/algorithms/warmup/simple_array_sum.js");
+var utils = require("../../../src/utils.js");
 
 
 describe("simple_array_sum: ", function() {
