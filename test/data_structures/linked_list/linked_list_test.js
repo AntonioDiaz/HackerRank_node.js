@@ -83,4 +83,64 @@ describe("linked_list insertHead: ", function() {
             expect(head.next.next.data).to.equal(3);
         });
     });
+    describe("linked_list delete", () =>{
+        it ("if exists deleteNode", () => {
+            expect(linkedList.deleteNode).to.exist;
+        });
+        it ("if deleteNode first element", () => {
+            let node01 = new linkedList.Node(1);
+            let node02 = new linkedList.Node(2);
+            let node03 = new linkedList.Node(3);
+            node01.next = node02;
+            node02.next = node03;
+            let head = linkedList.deleteNode(node01, 0);
+            expect(head.data).to.equal(2);
+            expect(head.next.data).to.equal(3);
+            expect(head.next.next).to.be.null;
+        });
+        it ("if deleteNode middle element", () => {
+            let node01 = new linkedList.Node(1);
+            let node02 = new linkedList.Node(2);
+            let node03 = new linkedList.Node(3);
+            node01.next = node02;
+            node02.next = node03;
+            let head = linkedList.deleteNode(node01, 1);
+            expect(head.data).to.equal(1);
+            expect(head.next.data).to.equal(3);
+            expect(head.next.next).to.be.null;
+        });
+        it ("if deleteNode last element", () => {
+            let node01 = new linkedList.Node(1);
+            let node02 = new linkedList.Node(2);
+            let node03 = new linkedList.Node(3);
+            node01.next = node02;
+            node02.next = node03;
+            let head = linkedList.deleteNode(node01, 2);
+            expect(head.data).to.equal(1);
+            expect(head.next.data).to.equal(2);
+            expect(head.next.next).to.be.null;
+        });
+        it ("if deleteNode unique element", () => {
+            let node01 = new linkedList.Node(1);
+            let head = linkedList.deleteNode(node01, 0);
+            expect(head).to.be.null;
+        });
+    });
+    describe("linked_list reverseLinkedList", ()=>{
+        it ("if exists reverseLinkedList", () => {
+            expect(linkedList.reverseLinkedList).to.exist;
+        });
+        it ("if reverseLinkedList", () => {
+            let node01 = new linkedList.Node(1);
+            let node02 = new linkedList.Node(2);
+            let node03 = new linkedList.Node(3);
+            node01.next = node02;
+            node02.next = node03;
+            console.log("toma toma");
+            let head = linkedList.reverseLinkedList(node01);
+            expect(head.data).to.equal(3);
+            expect(head.next.data).to.equal(2);
+            expect(head.next.next.data).to.equal(1);
+        });
+    });
 });

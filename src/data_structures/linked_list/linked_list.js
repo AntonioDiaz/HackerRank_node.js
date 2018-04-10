@@ -4,13 +4,32 @@ var Node = function(data) {
 };
 
 var print = head => {
-    console.log("linkedList -->");
     if(head) {
         do {
             console.log(head.data);
             head = head.next;
         } while(head);
     }
+};
+
+var reversePrint = head => {
+    if (head) {
+        reversePrint(head.next);
+        console.log(head.data);
+    }
+};
+
+var reverseLinkedList = head => {
+    let reversedList = null;
+    while(head!=null) {
+        if (reversedList==null) {
+            reversedList = new Node(head.data);
+        } else {
+            reversedList = insertHead(reversedList, head.data);
+        }
+        head = head.next;
+    }
+    return reversedList;
 };
 
 var insertTail = (head, data) => {
@@ -50,7 +69,6 @@ var insertPosition = (head, data, position) => {
     let previousNode = head;
     let headOriginal = head;
     while (head!=null){
-        console.log("pasa con countNode " + countNode);
         if (countNode===position) {
             let newNode = new Node(data);
             newNode.next = previousNode.next;
@@ -68,16 +86,47 @@ var insertPosition = (head, data, position) => {
     return headOriginal;
 };
 
-let node = insertTail(null, 5);
+var deleteNode = (head, position) => {
+    let headCopy = head;
+    let previousPointer = head;
+    let countNode = 0;
+    if (head==null) {
+        return head;
+    }
+    if (position===0) {
+        return head.next;
+    }
+    while (headCopy!=null){
+        if (countNode===position) {
+            previousPointer.next = headCopy.next;
+        }
+        countNode++;
+        previousPointer = headCopy;
+        headCopy = headCopy.next;
+    }
+    return head;
+};
+
+/*
+let node01 = new Node(1);
+let node02 = new Node(2);
+let node03 = new Node(3);
+node01.next = node02;
+node02.next = node03;
+reversePrint(node01);
+*/
+//let node = insertTail(null, 5);
 //print(node);
-node = insertTail(node, 78);
+//node = insertTail(node, 78);
 //print(node);
 //node = insertHead(node, 22);
-print(node);
-node = insertPosition(node, 44, 2);
-print(node);
+//print(node);
+//node = insertPosition(node, 44, 2);
+//print(node);
 exports.Node = Node;
 exports.insertHead = insertHead;
 exports.insertTail = insertTail;
 exports.insertPosition = insertPosition;
 exports.print = print;
+exports.deleteNode = deleteNode;
+exports.reverseLinkedList = reverseLinkedList;
