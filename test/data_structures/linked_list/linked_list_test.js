@@ -190,4 +190,29 @@ describe("linked_list insertHead: ", function() {
             expect(linkedList.compareLinkedLists(head01_1, head02_1)).to.equal(1);
         });
     });
+    describe ("linked_list mergeLinkedLists", ()=> {
+        it ("if exits", () => {
+            expect(linkedList.mergeLinkedLists).to.exist;
+        });
+        it ("if null null", () => {
+            let headA = null;
+            let headB = null;
+            expect(linkedList.mergeLinkedLists(headA, headB)).to.be.null;
+        });
+        it ("if list not empty to empty", () => {
+            let headA = new linkedList.Node(1);
+            let headB = null;
+            let headMerged = linkedList.mergeLinkedLists(headA, headB);
+            expect(headMerged.data).to.equal(1);
+        });
+        it ("if list not empty to not empty", () => {
+            let headA = new linkedList.Node(1);
+            headA.next = new linkedList.Node(2);
+            let headB = new linkedList.Node(3);
+            let headMerged = linkedList.mergeLinkedLists(headA, headB);
+            expect(headMerged.data).to.equal(1);
+            expect(headMerged.next.data).to.equal(2);
+            expect(headMerged.next.next.data).to.equal(3);
+        });
+    });
 });

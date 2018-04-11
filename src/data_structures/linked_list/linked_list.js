@@ -138,6 +138,30 @@ var compareLinkedLists = (headA, headB) => {
     }
 };
 
+var mergeLinkedLists = (headA, headB) => {
+    let headMerged = null;
+    while (headA!=null || headB!=null) {
+        if (headA!=null && headB!=null) {
+            if (headA.data<headB.data) {
+                headMerged = insertTail(headMerged, headA.data);
+                headA = headA.next;
+            } else {
+                headMerged = insertTail(headMerged, headB.data);
+                headB = headB.next;
+            }
+        } else if (headA!=null) {
+            headMerged = insertTail(headMerged, headA.data);
+            headA = headA.next;
+        } else {
+            headMerged = insertTail(headMerged, headB.data);
+            headB = headB.next;
+        }
+    }
+    return headMerged;
+};
+
+
+
 /*
 let node01 = new Node(1);
 let node02 = new Node(2);
@@ -163,3 +187,4 @@ exports.deleteNode = deleteNode;
 exports.reverseLinkedList = reverseLinkedList;
 exports.countElements = countElements;
 exports.compareLinkedLists = compareLinkedLists;
+exports.mergeLinkedLists = mergeLinkedLists;
