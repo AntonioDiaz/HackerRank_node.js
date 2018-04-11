@@ -160,7 +160,22 @@ var mergeLinkedLists = (headA, headB) => {
     return headMerged;
 };
 
+var getValueNode = (head, position) => {
+    let size = countElements(head);
+    let headCopy = head;
+    for (var i = 0; i < size - position -1; i++) {
+        headCopy = headCopy.next;
+    }
+    return headCopy.data;
+};
 
+let node01 = new Node(1);
+let node02 = new Node(2);
+let node03 = new Node(3);
+node01.next = node02;
+node02.next = node03;
+let myvar = getValueNode(node01, 2);
+console.log("myBar " + myvar);
 
 /*
 let node01 = new Node(1);
