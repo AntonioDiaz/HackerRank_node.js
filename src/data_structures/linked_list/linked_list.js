@@ -117,6 +117,27 @@ var countElements = (head) => {
     return count;
 };
 
+var compareLinkedLists = (headA, headB) => {
+    const DISTINCT = 0;
+    const EQUAL = 1;
+    let headACopy = headA;
+    let headBCopy = headB;
+    let countA = countElements(headACopy);
+    let countB = countElements(headBCopy);
+    if (countA!=countB) {
+        return DISTINCT;
+    } else {
+        while (headACopy!=null) {
+            if(headACopy.data!=headBCopy.data) {
+                return DISTINCT;
+            }
+            headACopy = headACopy.next;
+            headBCopy = headBCopy.next;
+        }
+        return EQUAL;
+    }
+};
+
 /*
 let node01 = new Node(1);
 let node02 = new Node(2);
@@ -141,3 +162,4 @@ exports.print = print;
 exports.deleteNode = deleteNode;
 exports.reverseLinkedList = reverseLinkedList;
 exports.countElements = countElements;
+exports.compareLinkedLists = compareLinkedLists;

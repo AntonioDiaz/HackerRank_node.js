@@ -162,4 +162,32 @@ describe("linked_list insertHead: ", function() {
             expect(linkedList.countElements(node01)).to.equal(3);
         });
     });
+    describe("linked_list compareLinkedLists", () => {
+        it ("if exists", () => {
+            expect(linkedList.compareLinkedLists).to.exist;
+        });
+        it ("if null vs null", () => {
+            let head01 = null;
+            let head02 = null;
+            expect(linkedList.compareLinkedLists(head01, head02)).to.equal(1);
+        });
+        it ("if elements vs null", () => {
+            let head01 = new linkedList.Node(1);
+            let head02 = null;
+            expect(linkedList.compareLinkedLists(head01, head02)).to.equal(0);
+        });
+        it ("if equal", () => {
+            let head01_1 = new linkedList.Node(1);
+            let head01_2 = new linkedList.Node(2);
+            let head01_3 = new linkedList.Node(3);
+            head01_1.next = head01_2;
+            head01_2.next = head01_3;
+            let head02_1 = new linkedList.Node(1);
+            let head02_2 = new linkedList.Node(2);
+            let head02_3 = new linkedList.Node(3);
+            head02_1.next = head02_2;
+            head02_2.next = head02_3;
+            expect(linkedList.compareLinkedLists(head01_1, head02_1)).to.equal(1);
+        });
+    });
 });
