@@ -107,6 +107,16 @@ var deleteNode = (head, position) => {
     return head;
 };
 
+var countElements = (head) => {
+    let headCopy = head;
+    let count = 0;
+    while (headCopy!=null ){
+        count++;
+        headCopy = headCopy.next;
+    }
+    return count;
+};
+
 /*
 let node01 = new Node(1);
 let node02 = new Node(2);
@@ -130,3 +140,4 @@ exports.insertPosition = insertPosition;
 exports.print = print;
 exports.deleteNode = deleteNode;
 exports.reverseLinkedList = reverseLinkedList;
+exports.countElements = countElements;

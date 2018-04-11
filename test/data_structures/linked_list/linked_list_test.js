@@ -136,11 +136,30 @@ describe("linked_list insertHead: ", function() {
             let node03 = new linkedList.Node(3);
             node01.next = node02;
             node02.next = node03;
-            console.log("toma toma");
             let head = linkedList.reverseLinkedList(node01);
             expect(head.data).to.equal(3);
             expect(head.next.data).to.equal(2);
             expect(head.next.next.data).to.equal(1);
+        });
+    });
+    describe("linked_list countElements", ()=>{
+        it ("if exists", () => {
+            expect(linkedList.countElements).to.exist;
+        });
+        it ("if null", () => {
+            expect(linkedList.countElements(null)).to.equal(0);
+        });
+        it ("if 1 element", () => {
+            let node01 = new linkedList.Node(1);
+            expect(linkedList.countElements(node01)).to.equal(1);
+        });
+        it ("if 3 element", () => {
+            let node01 = new linkedList.Node(1);
+            let node02 = new linkedList.Node(2);
+            let node03 = new linkedList.Node(3);
+            node01.next = node02;
+            node02.next = node03;
+            expect(linkedList.countElements(node01)).to.equal(3);
         });
     });
 });
