@@ -182,6 +182,26 @@ var removeDuplicates = (head) => {
     return headNoDuplicates;
 };
 
+
+function hasCycle(head) {
+    if (head===null) {
+        return 0;
+    } else {
+        let count = 0;
+        while(head!=null) {
+            head = head.next;
+            if (count>100) {
+                return 1;
+            }
+            count++;
+        }
+        return 0;
+    }
+}
+
+
+
+
 /*
 let node01 = new Node(1);
 let node02 = new Node(2);
