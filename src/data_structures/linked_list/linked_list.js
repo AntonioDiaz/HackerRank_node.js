@@ -199,6 +199,46 @@ function hasCycle(head) {
     }
 }
 
+function FindMergeNode(headA, headB) {
+    while (headA!=null) {
+        let headBCopy = headB;
+        while (headBCopy!=null){
+            if(headA.data===headBCopy.data) {
+                return headA.data;
+            }
+            headBCopy = headBCopy.next;
+        }
+        headA = headA.next;
+    }
+    return null;
+}
+
+// This is a "method-only" submission.
+// You only need to complete this method.
+function reverse(head) {
+    let loopPointer = head;
+    let headReversed = head;
+    while(loopPointer!=null) {
+        headReversed = loopPointer;
+        let nextAux = loopPointer.next;
+        loopPointer.next = loopPointer.prev;
+        loopPointer.prev = nextAux;
+        loopPointer = nextAux;    
+    }
+    return headReversed;   
+}
+
+function reverseRecursion(head) {
+    if(head==null) {
+        return null;
+    } else {
+        reverse(head.next);
+        let aux = head.next;
+        head.next = head.prev;
+        head.prev = aux;
+        return head;
+    }     
+}
 
 
 
