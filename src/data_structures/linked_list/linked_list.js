@@ -169,6 +169,20 @@ var getValueNode = (head, position) => {
     return headCopy.data;
 };
 
+var removeDuplicates = (head) => {
+    var headNoDuplicates = null;
+    var nodesInList = new Set();
+    while (head!=null) {
+        if (!nodesInList.has(head.data)) {
+            headNoDuplicates = insertTail(headNoDuplicates, head.data);
+            nodesInList.add(head.data);
+        }
+        head = head.next;
+    }
+    return headNoDuplicates;
+};
+
+/*
 let node01 = new Node(1);
 let node02 = new Node(2);
 let node03 = new Node(3);
@@ -177,7 +191,7 @@ node02.next = node03;
 let myvar = getValueNode(node01, 2);
 console.log("myBar " + myvar);
 
-/*
+
 let node01 = new Node(1);
 let node02 = new Node(2);
 let node03 = new Node(3);
@@ -203,3 +217,5 @@ exports.reverseLinkedList = reverseLinkedList;
 exports.countElements = countElements;
 exports.compareLinkedLists = compareLinkedLists;
 exports.mergeLinkedLists = mergeLinkedLists;
+exports.removeDuplicates = removeDuplicates;
+exports.getValueNode = getValueNode;

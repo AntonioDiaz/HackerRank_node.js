@@ -215,4 +215,24 @@ describe("linked_list insertHead: ", function() {
             expect(headMerged.next.next.data).to.equal(3);
         });
     });
+    describe("linked_list removeDuplicates" , () => {
+        it ("if exits", () => {
+            expect(linkedList.removeDuplicates).to.exist;
+        });
+        it ("remove duplicates", ()=> {
+            let head = linkedList.insertTail(null, 1);
+            head = linkedList.insertTail(head, 2);
+            head = linkedList.insertTail(head, 2);
+            head = linkedList.insertTail(head, 3);
+            head = linkedList.insertTail(head, 3);
+            head = linkedList.insertTail(head, 4);
+            let headNoDuplicates = linkedList.removeDuplicates(head);
+            let size = linkedList.countElements(headNoDuplicates);
+            expect(size).to.equal(4);
+            expect(headNoDuplicates.data).to.equal(1);
+            expect(headNoDuplicates.next.data).to.equal(2);            
+            expect(headNoDuplicates.next.next.data).to.equal(3);            
+            expect(headNoDuplicates.next.next.next.data).to.equal(4);            
+        });
+    });    
 });
