@@ -169,6 +169,80 @@ var getValueNode = (head, position) => {
     return headCopy.data;
 };
 
+var removeDuplicates = (head) => {
+    var headNoDuplicates = null;
+    var nodesInList = new Set();
+    while (head!=null) {
+        if (!nodesInList.has(head.data)) {
+            headNoDuplicates = insertTail(headNoDuplicates, head.data);
+            nodesInList.add(head.data);
+        }
+        head = head.next;
+    }
+    return headNoDuplicates;
+};
+
+
+function hasCycle(head) {
+    if (head===null) {
+        return 0;
+    } else {
+        let count = 0;
+        while(head!=null) {
+            head = head.next;
+            if (count>100) {
+                return 1;
+            }
+            count++;
+        }
+        return 0;
+    }
+}
+
+function FindMergeNode(headA, headB) {
+    while (headA!=null) {
+        let headBCopy = headB;
+        while (headBCopy!=null){
+            if(headA.data===headBCopy.data) {
+                return headA.data;
+            }
+            headBCopy = headBCopy.next;
+        }
+        headA = headA.next;
+    }
+    return null;
+}
+
+// This is a "method-only" submission.
+// You only need to complete this method.
+function reverse(head) {
+    let loopPointer = head;
+    let headReversed = head;
+    while(loopPointer!=null) {
+        headReversed = loopPointer;
+        let nextAux = loopPointer.next;
+        loopPointer.next = loopPointer.prev;
+        loopPointer.prev = nextAux;
+        loopPointer = nextAux;    
+    }
+    return headReversed;   
+}
+
+function reverseRecursion(head) {
+    if(head==null) {
+        return null;
+    } else {
+        reverse(head.next);
+        let aux = head.next;
+        head.next = head.prev;
+        head.prev = aux;
+        return head;
+    }     
+}
+
+
+
+/*
 let node01 = new Node(1);
 let node02 = new Node(2);
 let node03 = new Node(3);
@@ -177,7 +251,7 @@ node02.next = node03;
 let myvar = getValueNode(node01, 2);
 console.log("myBar " + myvar);
 
-/*
+
 let node01 = new Node(1);
 let node02 = new Node(2);
 let node03 = new Node(3);
@@ -203,3 +277,5 @@ exports.reverseLinkedList = reverseLinkedList;
 exports.countElements = countElements;
 exports.compareLinkedLists = compareLinkedLists;
 exports.mergeLinkedLists = mergeLinkedLists;
+exports.removeDuplicates = removeDuplicates;
+exports.getValueNode = getValueNode;
